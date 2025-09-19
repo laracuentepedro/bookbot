@@ -11,3 +11,12 @@ def count_chars(text):
             store[normalized_char] = 0
         store[normalized_char] += 1
     return store
+
+def sort_on(item):
+    return item["num"]
+def create_report(store):
+    list = []
+    for char, count in store.items():
+        list.append({"char": char, "num": count})
+    list.sort(reverse=True, key=sort_on)
+    return list
